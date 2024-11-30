@@ -1,5 +1,6 @@
 #include <iostream>
 #include <string>
+#include <iomanip>
 
 using namespace std;
 
@@ -9,7 +10,7 @@ int main()
 {
 	string fullName, section;
 	int studId, mGrade, fGrade, mmChoice = 0;
-	float itcLecM = 0, itcLecF = 0, itcLabM = 0, itcLabF = 0, cProgLecM = 0, cProgLecF = 0, cProgLabM = 0, cProgLabF = 0, peM = 0, peF = 0, ppeM = 0, ppeF = 0, rphM = 0, rphF = 0, stsM = 0, stsF = 0, allGrades=0;
+	float itcLecM = 0.0, itcLecF = 0.0, itcLabM = 0.0, itcLabF = 0.0, cProgLecM = 0.0, cProgLecF = 0.0, cProgLabM = 0.0, cProgLabF = 0.0, peM = 0.0, peF = 0.0, ppeM = 0.0, ppeF = 0.0, rphM = 0.0, rphF = 0.0, stsM = 0.0, stsF = 0.0;
 
 	//input user info
 	cout << "Enter full name: ";
@@ -41,7 +42,7 @@ int main()
 
 	do {
 		cout << "What would you like to do now?\n";
-		cout << "MAIN MENU: 1 - View Grades, 2 - Input Grades, 3-View Grade Conversion, 4 - Exit ";
+		cout << "MAIN MENU: 1 - View Grades, 2 - Input Grades, 3-View Grade Conversion Guide, 4 - Exit ";
 		cin >> mmChoice;
 		switch (mmChoice) {
 		case 1:
@@ -54,8 +55,9 @@ int main()
 			cout << "----------------------------------------------------------------\n";
 			cout << "\n";
 			cout << "\n";
+			cout << fixed << setprecision(1);
 			cout << "----------------------------------------------------------------------------------------------\n";
-			cout << "||             Course Title                ||  Midterm  ||  Finals  || Average Per Subject  ||\n";
+			cout << "||             Course Title                ||   Midterm   ||   Finals   || Average Per Subject  ||\n";
 			cout << "----------------------------------------------------------------------------------------------\n";
 			cout << "||     Introduction to Computing (LEC)     ||     " << itcLecM << "     ||     " << itcLecF << "    ||                      ||\n";
 			cout << "----------------------------------------------------------------------------------------------\n";
@@ -83,6 +85,44 @@ int main()
 
 			cout << "Enter grades for Introduction to Computing (LEC) (Midterm and Finals): ";
 			cin >> itcLecM >> itcLecF;
+			if (itcLecM && itcLecF >= 97 && itcLecM && itcLecF <= 100)
+			{
+				itcLecM = 4.0;
+				itcLecF = 4.0;
+			}
+			else if (itcLecM && itcLecF >= 93 && itcLecM && itcLecF <= 96)
+			{
+				itcLecM = 3.5;
+				itcLecF = 3.5;
+			}
+			else if (itcLecM && itcLecF >= 89 && itcLecM && itcLecF <= 92)
+			{
+				itcLecM = 3.0;
+				itcLecF = 3.0;
+			}
+			else if (itcLecM && itcLecF >= 85 && itcLecM && itcLecF <= 88)
+			{
+				itcLecM = 2.5;
+				itcLecF = 2.5;
+			}
+
+			else if (itcLecM && itcLecF >= 80 && itcLecM && itcLecF <= 84)
+			{
+				itcLecM = 2.0;
+				itcLecF = 2.0;
+			}
+
+			else if (itcLecM && itcLecF >= 75 && itcLecM && itcLecF <= 79)
+			{
+				itcLecM = 1.5;
+				itcLecF = 1.5;
+			}
+
+			else if (itcLecM && itcLecF >= 70 && itcLecM && itcLecF <= 74)
+			{
+				itcLecM = 1.0;
+				itcLecF = 1.0;
+			}
 
 			cout << "Enter grades for Introduction to Computing (LAB) (Midterm and Finals): ";
 			cin >> itcLabM >> itcLabF;
