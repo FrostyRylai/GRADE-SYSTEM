@@ -1,0 +1,137 @@
+#include <iostream>
+#include <string>
+
+using namespace std;
+
+//course title are given: itc lec and lab, comprog lec and lab, pe, ppe, rph, sts
+
+int main()
+{
+	string fullName, section;
+	int studId, mGrade, fGrade, mmChoice = 0;
+	float itcLecM = 0, itcLecF = 0, itcLabM = 0, itcLabF = 0, cProgLecM = 0, cProgLecF = 0, cProgLabM = 0, cProgLabF = 0, peM = 0, peF = 0, ppeM = 0, ppeF = 0, rphM = 0, rphF = 0, stsM = 0, stsF = 0, allGrades=0;
+
+	//input user info
+	cout << "Enter full name: ";
+	getline(cin, fullName);
+
+	//cout << "welcome user " << fullName << endl;
+
+	cout << "Enter Student ID: ";
+	cin >> studId;
+
+	cout << "Enter section: ";
+	cin >> section;
+
+	//cout << studId << " " << fullName << " " << section << endl;
+	cout << "----------------------------------------------------------------\n";
+	cout << "| Name	     || " << fullName << "								 \n";
+	cout << "----------------------------------------------------------------\n";
+	cout << "| Student ID || " << studId << "								 \n";
+	cout << "----------------------------------------------------------------\n";
+	cout << "| Section    || " << section << "								 \n";
+	cout << "----------------------------------------------------------------\n";
+
+
+	//display features (like main menu ganern)
+	cout << "Thank you for filling out relevant info \n";
+
+	system("pause");
+	system("cls");
+
+	do {
+		cout << "What would you like to do now?\n";
+		cout << "MAIN MENU: 1 - View Grades, 2 - Input Grades, 3-View Grade Conversion, 4 - Exit ";
+		cin >> mmChoice;
+		switch (mmChoice) {
+		case 1:
+			cout << "----------------------------------------------------------------\n";
+			cout << "| Name	     || " << fullName << "								 \n";
+			cout << "----------------------------------------------------------------\n";
+			cout << "| Student ID || " << studId << "								 \n";
+			cout << "----------------------------------------------------------------\n";
+			cout << "| Section    || " << section << "								 \n";
+			cout << "----------------------------------------------------------------\n";
+			cout << "\n";
+			cout << "\n";
+			cout << "----------------------------------------------------------------------------------------------\n";
+			cout << "||             Course Title                ||  Midterm  ||  Finals  || Average Per Subject  ||\n";
+			cout << "----------------------------------------------------------------------------------------------\n";
+			cout << "||     Introduction to Computing (LEC)     ||     " << itcLecM << "     ||     " << itcLecF << "    ||                      ||\n";
+			cout << "----------------------------------------------------------------------------------------------\n";
+			cout << "||     Introduction to Computing (LAB)     ||     " << itcLabM << "     ||     " << itcLabF << "    ||                      ||\n";
+			cout << "----------------------------------------------------------------------------------------------\n";
+			cout << "||       Computer Programming 1 (LEC)      ||     " << cProgLecM << "     ||     " << cProgLecF << "    ||                      ||\n";
+			cout << "----------------------------------------------------------------------------------------------\n";
+			cout << "||       Computer Programming 1 (LAB)      ||     " << cProgLabM << "     ||     " << cProgLabF << "    ||                      ||\n";
+			cout << "----------------------------------------------------------------------------------------------\n";
+			cout << "||           Physical Education 1          ||     " << peM << "     ||     " << peF << "    ||                      ||\n";
+			cout << "----------------------------------------------------------------------------------------------\n";
+			cout << "|| Personal and Professional Effectiveness ||     " << ppeM << "     ||     " << ppeF << "    ||                      ||\n";
+			cout << "----------------------------------------------------------------------------------------------\n";
+			cout << "||      Readings in Philippine History     ||     " << rphM << "     ||     " << rphF << "    ||                      ||\n";
+			cout << "----------------------------------------------------------------------------------------------\n";
+			cout << "||      Science Technology and Society     ||     " << stsM << "     ||     " << stsF << "    ||                      ||\n";
+			cout << "----------------------------------------------------------------------------------------------\n";
+
+			break;
+
+		case 2:
+			system("pause");
+			system("cls");
+			cout << "ENTER YOUR GRADES!\n";
+
+			cout << "Enter grades for Introduction to Computing (LEC) (Midterm and Finals): ";
+			cin >> itcLecM >> itcLecF;
+
+			cout << "Enter grades for Introduction to Computing (LAB) (Midterm and Finals): ";
+			cin >> itcLabM >> itcLabF;
+
+			cout << "Enter grades for Computer Programming 1 (LEC) (Midterm and Finals): ";
+			cin >> cProgLecM >> cProgLecF;
+
+			cout << "Enter grades for Computer Programming 1 (LAB) (Midterm and Finals): ";
+			cin >> cProgLabM >> cProgLabF;
+
+			cout << "Enter grades for Physical Education 1 (Midterm and Finals): ";
+			cin >> peM >> peF;
+
+			cout << "Enter grades for Personal and Professional Effectiveness (Midterm and Finals): ";
+			cin >> ppeM >> ppeF;
+
+			cout << "Enter grades for Readings in Philippine History (Midterm and Finals): ";
+			cin >> rphM >> rphF;
+
+			cout << "Enter grades for Science Technology and Society (Midterm and Finals) : ";
+			cin >> stsM >> stsF;
+
+			break;
+			/*cout << itcLecM << " " << itcLecF << " ";
+			cout << itcLabM << " " << itcLabF << " ";
+			cout << cProgLecM << " " << cProgLecF << " ";
+			cout << cProgLabM << " " << cProgLabF << " ";
+			cout << peM << " " << peF << " ";
+			cout << ppeM << " " << ppeF << " ";
+			cout << rphM << " " << rphF << " ";
+			cout << stsM << " " << stsF << " ";
+			break;*/
+
+		case 3:
+			cout << "---------------------------------\n";
+			cout << "||     Grade Conversion        ||\n";
+			cout << "---------------------------------\n";
+			cout << "|| 97-100 || 4.0               ||\n";
+			cout << "|| 93-96  || 3.5               ||\n";
+			cout << "|| 89-92  || 3.0               ||\n";
+			cout << "|| 85-88  || 2.5               ||\n";
+			cout << "|| 80-84  || 2.0               ||\n";
+			cout << "|| 75-79  || 1.5               ||\n";
+			cout << "|| 70-74  || 1.0               ||\n";
+			cout << "|| 0.5    || Below 70          ||\n";
+			cout << "|| 9.0    || Incomplete        ||\n";
+			cout << "---------------------------------\n";
+			break;
+		}
+	} while (mmChoice != 4);
+	return 0;
+}
